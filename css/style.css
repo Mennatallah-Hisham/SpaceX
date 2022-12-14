@@ -1,0 +1,419 @@
+/* :root{
+
+
+} */
+
+html{
+    font-size:62.5%;
+
+}
+
+*, *::before ,*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+    color:#fff;
+
+}
+/*************************************************************************/
+/*************** GENERAL*******************/
+
+section{
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.sec-content{
+    position: absolute;
+    left:2rem;
+    bottom:15rem;
+    max-width: 30rem;
+    /* background-color: rgba(0, 0, 0, 0.596);
+    padding:2rem; */
+}
+.btn{
+position: relative;
+display: inline-block;
+cursor: pointer;
+text-align: 1.3rem;
+border:1px solid #fff;
+padding:0.5rem 2rem;
+overflow:hidden;
+transition: all 0.6s;
+z-index: 4;
+margin-top:1rem;
+}
+.btn-txt{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+    font-size: 1.6rem;
+}
+.btn-hover{
+position: absolute;
+
+left:0;
+bottom:-2.5rem;
+
+background-color: #fff;
+height:2.3rem;
+width:100%;
+transition: all 0.5s;
+
+}
+
+.btn:hover{
+    color:#000;
+}
+
+.btn:hover .btn-hover{
+    bottom: 0;
+    z-index: -1;
+}
+a:link,
+a:visited{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:#fff;
+    padding:0.3rem 2rem;
+
+}
+ul{
+    list-style: none;
+}
+.scroll-arrow{
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    transform:translateX(-50%);
+}
+.icon-arrow{
+    height: 3.4rem;
+    width: 3.4rem;
+}
+/*************************************************************************/
+/*************** RE-USUABLE *******************/
+
+.heading,
+.sub-heading{
+    text-transform: uppercase;
+}
+.heading{
+ 
+    font-size: 3rem;
+    font-weight: 700;
+    margin:1rem auto;
+}
+.sub-heading{
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+.main-nav{
+    display: none;
+}
+
+
+.hide{
+    display: none;
+}
+.no-scroll{
+    overflow: hidden;
+}
+.overlay{
+    display: none;
+}
+.overlay-active{
+    display: block;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba(0, 0, 0,0.5);
+    width:100%;
+    height: 100%;
+    z-index: 3;
+
+
+}
+.aside{
+    width:20rem;
+    height: 100%;
+    position:fixed;
+    right:-20rem;
+    top:0;
+    background-color:#000;
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+}
+.aside-active{
+    right:0rem;
+    z-index: 5;
+   
+}
+.aside-list{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.aside-list a{
+    padding:0.3rem 0;
+    font-size:1.4rem;
+}
+.aside-list a::after{
+    content:"";
+display: block;
+width:100%;
+height: 1px;
+   background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.aside-list a:hover::after{
+    transform: scaleX(1);
+}
+
+/*************************************************************************/
+
+/********** HEADER **************/
+.header{
+   position: fixed;
+   top:0;
+   left:0;
+   width:100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 3;
+   height:5rem;
+   padding:0 3rem;
+
+}
+.logo{
+    height:2.5rem;
+}
+
+.btn-mobile-nav{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    z-index:999;
+    position: fixed;
+    right:1rem;
+    top:1.3rem;
+}
+.icon-close,
+.icon-open{
+    height: 2.4rem;
+   
+    stroke: #fff;
+}
+
+
+/* .main-nav-list{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap:0.3rem;
+}
+
+
+.main-nav-link::after{
+content:" ";
+display: block;
+background-color: #fff;
+width:100%;
+height: 1px;
+transform: scaleX(0);
+transition: all 0.5s;
+
+}
+.main-nav-link:hover::after{
+
+    transform: scaleX(1);
+    transform-origin:left;
+} */
+/*************************************************************************/
+
+
+
+/**************** ANIMATIONS *********************/
+.heading{
+    animation:fadeInUp 0.5s ease-in-out 0.2s;
+    /* stop from showing at the start of the animation */
+    animation-fill-mode:both;
+}
+.sub-heading{
+    animation:fadeInUp 0.5s ease-in-out;
+}
+.sec-content a{
+    animation:fadeInUp 0.5s ease-in-out  0.4s;
+    animation-fill-mode:both;
+}
+.scroll-arrow{
+    animation:fadeBounce 3s infinite;
+    animation-fill-mode:both;
+}
+
+@keyframes fadeInUp{
+    0%{
+        opacity:0;
+        transform:translateY(14rem);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+    
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+ 
+    }
+
+    100%{
+        opacity:1;
+     
+    }
+    
+}
+
+
+@keyframes fadeBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100%{
+        opacity:0;
+        transform: translateY(-2rem);
+    }
+    40%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+/********** SECTION A **************/
+.sec-a{
+    background-image: url("../img/section-a.webp");
+   
+}
+/********** SECTION B **************/
+.sec-b{
+    background-image: url("../img/section-b.webp");
+   
+}
+/********** SECTION C **************/
+.sec-c{
+    background-image: url("../img/section-c.webp");
+   
+}
+/********** SECTION D **************/
+.sec-d{
+    background-image: url("../img/section-d.webp");
+   
+}
+
+/********** SECTION E **************/
+.sec-e{
+    background-image: url("../img/section-e.webp");
+   
+}
+/********** SECTION F **************/
+.sec-f{
+    background-image: url("../img/section-f.webp");
+   
+}
+
+
+/**********************FOOTER *******************/
+.footer{
+
+    padding:1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+
+}
+.sec-nav-link{
+    font-size: 1.4rem;
+}
+.sec-nav-link:hover{
+    color:#aaa;
+}
+
+/********************* falcon 9 ***************/
+.sec-falcon{
+    background-image:url("../img/falcon-9.webp");
+}
+.sec-dragon{
+    background-image:url("../img/dragon.webp");
+}
+.sec-falcon-heavy{
+    background-image: url("../img/falcon-heavy.webp");
+}
+.sec-animate{
+    animation: fadeIn  2s ease-in-out;
+}
+.pg-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.pg-content .heading{
+    font-size: 2.8rem;
+    animation:fadeInUp 0.5s ease-in-out ;
+    /* stop from showing at the start of the animation */
+    animation-fill-mode:both;
+}
+
+.pg-content .sub-heading{
+    font-size: 2rem;
+    display: block;
+    width:25rem;
+    animation:fadeInUp 0.5s ease-in-out 0.5s;
+    /* stop from showing at the start of the animation */
+    animation-fill-mode:both;
+
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding:3rem 0;
+    gap:2rem;
+}
+.counter{
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.counter-title{
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+}
